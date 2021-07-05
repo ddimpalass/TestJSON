@@ -17,6 +17,12 @@
 		1818F808268B356A00484023 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818F807268B356A00484023 /* DataModel.swift */; };
 		1818F813268B3B6500484023 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1818F812268B3B6500484023 /* Alamofire */; };
 		1818F817268B3BE200484023 /* Network manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818F816268B3BE200484023 /* Network manager.swift */; };
+		18DAD5152691BF88003F83FC /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAD5142691BF88003F83FC /* PictureTableViewCell.swift */; };
+		18DAD5192691BF97003F83FC /* SelectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAD5182691BF97003F83FC /* SelectorTableViewCell.swift */; };
+		18DAD51C2692DBB2003F83FC /* PictureTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAD51B2692DBB2003F83FC /* PictureTableViewCellViewModel.swift */; };
+		18DAD51F2692DBC4003F83FC /* SelectorTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAD51E2692DBC4003F83FC /* SelectorTableViewCellViewModel.swift */; };
+		18DAD5222692E8A7003F83FC /* HzTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAD5212692E8A7003F83FC /* HzTableViewCell.swift */; };
+		18DAD5252692E8C7003F83FC /* HzTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAD5242692E8C7003F83FC /* HzTableViewCellViewModel.swift */; };
 		2F15BFC7268C7A1100803C7F /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15BFC6268C7A1100803C7F /* AlertManager.swift */; };
 		2F15BFC9268C853800803C7F /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15BFC8268C853800803C7F /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +39,12 @@
 		1818F7FF268B32A200484023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1818F807268B356A00484023 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		1818F816268B3BE200484023 /* Network manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network manager.swift"; sourceTree = "<group>"; };
+		18DAD5142691BF88003F83FC /* PictureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableViewCell.swift; sourceTree = "<group>"; };
+		18DAD5182691BF97003F83FC /* SelectorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorTableViewCell.swift; sourceTree = "<group>"; };
+		18DAD51B2692DBB2003F83FC /* PictureTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		18DAD51E2692DBC4003F83FC /* SelectorTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		18DAD5212692E8A7003F83FC /* HzTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HzTableViewCell.swift; sourceTree = "<group>"; };
+		18DAD5242692E8C7003F83FC /* HzTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HzTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		2F15BFC6268C7A1100803C7F /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		2F15BFC8268C853800803C7F /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,11 +135,25 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		18DAD5132691BF31003F83FC /* ListCells */ = {
+			isa = PBXGroup;
+			children = (
+				18DAD5212692E8A7003F83FC /* HzTableViewCell.swift */,
+				18DAD5242692E8C7003F83FC /* HzTableViewCellViewModel.swift */,
+				18DAD5142691BF88003F83FC /* PictureTableViewCell.swift */,
+				18DAD51B2692DBB2003F83FC /* PictureTableViewCellViewModel.swift */,
+				18DAD5182691BF97003F83FC /* SelectorTableViewCell.swift */,
+				18DAD51E2692DBC4003F83FC /* SelectorTableViewCellViewModel.swift */,
+			);
+			path = ListCells;
+			sourceTree = "<group>";
+		};
 		2F15BFCA268C8FA500803C7F /* List */ = {
 			isa = PBXGroup;
 			children = (
 				1818F7F2268B32A100484023 /* ListViewController.swift */,
 				2F15BFC8268C853800803C7F /* ListViewModel.swift */,
+				18DAD5132691BF31003F83FC /* ListCells */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -210,12 +236,18 @@
 			files = (
 				2F15BFC7268C7A1100803C7F /* AlertManager.swift in Sources */,
 				2F15BFC9268C853800803C7F /* ListViewModel.swift in Sources */,
+				18DAD5192691BF97003F83FC /* SelectorTableViewCell.swift in Sources */,
+				18DAD51F2692DBC4003F83FC /* SelectorTableViewCellViewModel.swift in Sources */,
 				1818F808268B356A00484023 /* DataModel.swift in Sources */,
 				1818F7F3268B32A100484023 /* ListViewController.swift in Sources */,
+				18DAD5222692E8A7003F83FC /* HzTableViewCell.swift in Sources */,
 				1818F7EF268B32A100484023 /* AppDelegate.swift in Sources */,
+				18DAD5152691BF88003F83FC /* PictureTableViewCell.swift in Sources */,
 				1818F817268B3BE200484023 /* Network manager.swift in Sources */,
 				1818F7F1268B32A100484023 /* SceneDelegate.swift in Sources */,
 				1818F7F9268B32A100484023 /* TestJSON.xcdatamodeld in Sources */,
+				18DAD5252692E8C7003F83FC /* HzTableViewCellViewModel.swift in Sources */,
+				18DAD51C2692DBB2003F83FC /* PictureTableViewCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,12 +41,22 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = viewModel.textForCell(at: indexPath)
-        if let imageData = viewModel.imageDataForCell(at: indexPath) {
-            cell.imageView?.image = UIImage(data: imageData)
+        guard let hzCell = tableView.dequeueReusableCell(withIdentifier: ViewType.hz.rawValue, for: indexPath) as? HzTableViewCell,
+              let pictureCell = tableView.dequeueReusableCell(withIdentifier: ViewType.picture.rawValue, for: indexPath) as? PictureTableViewCell,
+              let selectorCell = tableView.dequeueReusableCell(withIdentifier: ViewType.selector.rawValue, for: indexPath) as? SelectorTableViewCell else { return UITableViewCell() }
+        switch viewModel.view(at: indexPath) {
+        case ViewType.hz.rawValue:
+            hzCell.viewModel = HzTableViewCellViewModel(data: viewModel.getMainData(at: indexPath))
+            return hzCell
+        case ViewType.picture.rawValue:
+            pictureCell.viewModel = PictureTableViewCellViewModel(data: viewModel.getMainData(at: indexPath))
+            return pictureCell
+        case ViewType.selector.rawValue:
+            selectorCell.viewModel = SelectorTableViewCellViewModel(data: viewModel.getMainData(at: indexPath))
+            return selectorCell
+        default:
+            return UITableViewCell()
         }
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

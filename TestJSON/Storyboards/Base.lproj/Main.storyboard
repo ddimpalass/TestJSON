@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="APa-Ox-nWB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="APa-Ox-nWB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,14 +20,14 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Kwh-Se-YQv" style="IBUITableViewCellStyleDefault" id="VvN-7g-Usy" customClass="ListTableViewCell" customModule="TestJSON" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hz" textLabel="Kwh-Se-YQv" style="IBUITableViewCellStyleDefault" id="VvN-7g-Usy" customClass="HzTableViewCell" customModule="TestJSON" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VvN-7g-Usy" id="ybP-21-oST">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kwh-Se-YQv">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kwh-Se-YQv">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -37,6 +37,93 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="picture" id="tbQ-1E-fXl" customClass="PictureTableViewCell" customModule="TestJSON" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="99" width="414" height="161"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tbQ-1E-fXl" id="Lp4-KH-ekx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="161"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fLL-tM-eJo">
+                                                    <rect key="frame" x="16" y="16" width="382" height="129"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0Fv-Rm-Ilk">
+                                                            <rect key="frame" x="0.0" y="0.5" width="100" height="99"/>
+                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="Aa3-XT-z5Z"/>
+                                                                <constraint firstAttribute="height" constant="100" id="zO3-Ht-yEY"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbY-Vq-Sp3">
+                                                            <rect key="frame" x="0.0" y="108" width="41.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fLL-tM-eJo" firstAttribute="leading" secondItem="Lp4-KH-ekx" secondAttribute="leading" constant="16" id="XBf-65-hjP"/>
+                                                <constraint firstAttribute="trailing" secondItem="fLL-tM-eJo" secondAttribute="trailing" constant="16" id="kpC-gd-ild"/>
+                                                <constraint firstItem="fLL-tM-eJo" firstAttribute="top" secondItem="Lp4-KH-ekx" secondAttribute="top" constant="16" id="w04-tV-VU4"/>
+                                                <constraint firstAttribute="bottom" secondItem="fLL-tM-eJo" secondAttribute="bottom" constant="16" id="yUp-fH-rvw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellImage" destination="0Fv-Rm-Ilk" id="z7e-ZA-osH"/>
+                                            <outlet property="label" destination="FbY-Vq-Sp3" id="Iwf-HB-tze"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="selector" id="qm7-bL-hrF" customClass="SelectorTableViewCell" customModule="TestJSON" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="260" width="414" height="100.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qm7-bL-hrF" id="Ubq-pd-nhO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QxS-SO-Ngx">
+                                                    <rect key="frame" x="16" y="16" width="382" height="68.5"/>
+                                                    <subviews>
+                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bpg-MX-RKN">
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="31"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="pyb-7J-eqy"/>
+                                                            </constraints>
+                                                            <segments>
+                                                                <segment title="First"/>
+                                                                <segment title="Second"/>
+                                                            </segments>
+                                                        </segmentedControl>
+                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9UQ-8W-xBV">
+                                                            <rect key="frame" x="0.0" y="38" width="382" height="31.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="M1h-9g-6pC"/>
+                                                            </constraints>
+                                                            <segments>
+                                                                <segment title="First"/>
+                                                                <segment title="Second"/>
+                                                            </segments>
+                                                            <connections>
+                                                                <action selector="segmentedControlActionForVariants:" destination="qm7-bL-hrF" eventType="valueChanged" id="fWo-7G-zTN"/>
+                                                            </connections>
+                                                        </segmentedControl>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QxS-SO-Ngx" firstAttribute="leading" secondItem="Ubq-pd-nhO" secondAttribute="leading" constant="16" id="8dx-Pp-Lpn"/>
+                                                <constraint firstAttribute="bottom" secondItem="QxS-SO-Ngx" secondAttribute="bottom" constant="16" id="Glz-tU-q4y"/>
+                                                <constraint firstItem="QxS-SO-Ngx" firstAttribute="top" secondItem="Ubq-pd-nhO" secondAttribute="top" constant="16" id="HJj-ya-hDd"/>
+                                                <constraint firstAttribute="trailing" secondItem="QxS-SO-Ngx" secondAttribute="trailing" constant="16" id="jWZ-fg-4rL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="segmentedControlForSelectedId" destination="Bpg-MX-RKN" id="yxz-CR-I8f"/>
+                                            <outlet property="segmentedControlForVariants" destination="9UQ-8W-xBV" id="aKE-zM-6Nt"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="APa-Ox-nWB" id="Val-AY-ymn"/>
@@ -45,7 +132,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7HS-1u-ScA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7HS-1u-ScA" firstAttribute="bottom" secondItem="7zH-9u-puM" secondAttribute="bottom" id="6ku-sw-fW3"/>
                             <constraint firstItem="7HS-1u-ScA" firstAttribute="trailing" secondItem="7zH-9u-puM" secondAttribute="trailing" id="Mqf-qx-tch"/>
@@ -64,8 +151,9 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

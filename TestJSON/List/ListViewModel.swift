@@ -11,9 +11,9 @@ protocol ListViewModelProtocol: AnyObject {
     var numberOfSections: Int { get }
     func fetchCourses(completion: @escaping() -> Void)
     func numberOfRowsInSection(section: Int) -> Int
+    func view(at indexPath: IndexPath) -> String
     func titleForHeaderInSection(section: Int) -> String
-    func textForCell(at indexPath: IndexPath) -> String
-    func imageDataForCell(at indexPath: IndexPath) -> Data?
+    func getMainData(at indexPath: IndexPath) -> [MainData]
     func didSelectRow(at indexPath: IndexPath)
 }
 
@@ -24,6 +24,7 @@ enum ViewType: String {
 }
 
 class ListViewModel: ListViewModelProtocol {
+    
     var numberOfSections: Int {
         input?.view.count ?? 1
     }
@@ -35,16 +36,33 @@ class ListViewModel: ListViewModelProtocol {
             guard let self = self,
                   let input = input else { return }
             self.input = input
+            self.input?.view = Example.view
+            self.input?.data.append(Example.firstExampleHZ)
+            self.input?.data.append(Example.secondExampleHZ)
             completion()
         }
     }
     
     func numberOfRowsInSection(section: Int) -> Int {
-        var numberOfRowsInSection = 1
-        if input?.view[section] == ViewType.selector.rawValue {
-            numberOfRowsInSection = input?.data.first{ $0.name == ViewType.selector.rawValue }?.data.variants?.count ?? 1
-        }
+        let numberOfRowsInSection = 1
         return numberOfRowsInSection
+    }
+    
+    func view(at indexPath: IndexPath) -> String {
+        var view = ""
+        switch input?.view[indexPath.section] {
+        case ViewType.hz.rawValue:
+            view = ViewType.hz.rawValue
+        case ViewType.picture.rawValue:
+            view = ViewType.picture.rawValue
+        case ViewType.selector.rawValue:
+            view = ViewType.selector.rawValue
+        case .none:
+            view = ""
+        case .some(_):
+            view = ""
+        }
+        return view
     }
     
     func titleForHeaderInSection(section: Int) -> String {
@@ -64,31 +82,21 @@ class ListViewModel: ListViewModelProtocol {
         return titleForHeaderInSection
     }
     
-    func textForCell(at indexPath: IndexPath) -> String {
-        var text = ""
+    func getMainData(at indexPath: IndexPath) -> [MainData] {
+        var mainData: [MainData] = []
         switch input?.view[indexPath.section] {
         case ViewType.hz.rawValue:
-            text = input?.data.first{ $0.name == ViewType.hz.rawValue }?.data.text ?? ""
-        case ViewType.selector.rawValue:
-            text = input?.data.first{ $0.name == ViewType.selector.rawValue }?.data.variants?[indexPath.row].text ?? ""
+            mainData = input?.data.filter{ $0.name == ViewType.hz.rawValue} ?? []
         case ViewType.picture.rawValue:
-            text = input?.data.first{ $0.name == ViewType.picture.rawValue }?.data.text ?? ""
+            mainData = input?.data.filter{ $0.name == ViewType.picture.rawValue} ?? []
+        case ViewType.selector.rawValue:
+            mainData = input?.data.filter{ $0.name == ViewType.selector.rawValue} ?? []
         case .none:
-            text = ""
+            mainData = []
         case .some(_):
-            text = ""
+            mainData = []
         }
-        return text
-    }
-    
-    func imageDataForCell(at indexPath: IndexPath) -> Data? {
-        var imageData: Data?
-        if input?.view[indexPath.section] == ViewType.picture.rawValue {
-            guard let url = input?.data.first(where: { $0.name == ViewType.picture.rawValue })?.data.url,
-                  let imageURL = URL(string: url) else { return nil }
-            imageData = try? Data(contentsOf: imageURL)
-        }
-        return imageData
+        return mainData
     }
     
     func didSelectRow(at indexPath: IndexPath) {
@@ -97,15 +105,18 @@ class ListViewModel: ListViewModelProtocol {
             AlertManager.showOkAlert(message: ViewType.hz.rawValue)
         case ViewType.picture.rawValue:
             AlertManager.showOkAlert(message: ViewType.picture.rawValue)
-        case ViewType.selector.rawValue:
-            let id = input?.data.first{ $0.name == ViewType.selector.rawValue }?.data.variants?[indexPath.row].id
-            AlertManager.showOkAlert(message: "\(ViewType.selector.rawValue) with id: \(id ?? 0)")
         case .none:
             break
         case .some(_):
             break
         }
     }
+}
+
+struct Example {
+    static let view = ["picture", "hz", "selector", "selector", "selector", "picture", "hz", "selector", "selector", "selector", "picture", "hz", "selector", "selector", "selector", "picture", "hz", "selector", "selector", "selector", "hz", "picture", "hz", "selector", "selector", "selector", "picture", "hz", "selector", "selector", "selector", "picture", "hz", "selector", "selector", "selector", "picture", "hz", "selector", "selector", "selector", "hz", "picture", "hz", "selector", "selector", "selector", "picture", "hz", "selector", "selector", "selector", "picture", "hz", "selector", "selector", "selector", "picture", "hz", "selector", "selector", "selector", "hz", "picture", "hz", "selector", "selector", "selector", "picture", "hz", "selector", "selector", "selector", "picture", "hz", "selector", "selector", "selector", "picture", "hz", "selector", "selector", "selector", "hz", "picture"]
+    static let firstExampleHZ = MainData(name: "hz", data: SupportingData(text: "Первый некоторый текст", url: nil, selectedId: nil, variants: nil))
+    static let secondExampleHZ = MainData(name: "hz", data: SupportingData(text: "Второй некоторый текст", url: nil, selectedId: nil, variants: nil))
 }
 
 

@@ -9,26 +9,26 @@ import Foundation
 
 // MARK: - Input
 struct Input: Codable {
-    let data: [MainData]
-    let view: [String]
+    var data: [MainData]
+    var view: [String]
 }
 
 // MARK: - MainData
 struct MainData: Codable {
     let name: String
-    let data: SupportingData
+    var data: SupportingData
 }
 
 // MARK: - SupportingData
 struct SupportingData: Codable {
     let text: String?
     let url: String?
-    let selectedID: Int?
+    let selectedId: Int?
     let variants: [Variant]?
 
     enum CodingKeys: String, CodingKey {
         case text, url
-        case selectedID
+        case selectedId
         case variants
     }
 }
